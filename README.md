@@ -28,6 +28,69 @@ rspec spec/2_card_deck_spec.rb -e "shuffle"
 
 If you're not familiar with the game "Go Fish," take a few minutes to look it up. You can't build something you without understanding it at least a little first!
 
+
+### Rules of Go Fish
+
+```
+SETUP:
+
+Requirements:
+
+    No jokers in deck (52 cards)
+    2 or more players
+
+Win 1:
+    No more cards in deck.
+    Only one player has cards.
+    A player has collected all the "books" (all 4 types of a certain card)
+    
+
+Win 2: 
+    No more cards in the deck.
+    More than one player has cards.
+    The player with the most "books" wins
+
+
+DEAL:
+
+    Pick a player to be the dealer
+    Pick a player to start (person to left of dealer)
+
+    If player count is 2:
+    Deal 7 cards to each player
+
+    If player count is more than 2:
+    Deal 5 cards to each player
+
+    Place remaining deck in the middle.
+
+START TURN:
+
+Player 1 (currPlayer) chooses any one card (probably the one they have most of) and then asks any other player "Got any ______?"
+
+If selected player (targetPlayer) has ANY matching cards, they must give currPlayer ALL matching cards they own.
+
+    If currPlayer received a card from targetPlayer, they take targetPlayers card, check if they have any book, and then go again.
+
+    If currPlayer gets a book, they publicly share the info "Collected all four ____s"
+
+If targetPlayer did NOT have any matching cards, they say "Go Fish"
+
+    currPlayer picks up the top card from the deck, and passes. 
+
+    It is now the player to the left of currPlayer's turn.
+
+END TURN
+
+The player to the left of currPlayer is now the new currPlayer.
+
+START NEW TURN
+
+```
+
+
+
+
 We'll be building code that will help simulate one round of Go Fish between two players. That is:
 
 - the first player will ask the second player whether the second player has any of a certain kind of card (like "threes" or "kings") in their hand
